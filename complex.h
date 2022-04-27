@@ -27,8 +27,6 @@ class Complex{
         Complex operator-(Complex b);
         Complex operator*(Complex b);
         Complex operator/(Complex b);
-
-
         friend Complex operator+(double real, const Complex& complex);
         friend Complex operator*(double real, Complex& complex);
 };
