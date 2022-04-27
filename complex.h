@@ -11,7 +11,9 @@ class Complex{
 	public:
         Complex(double real);
         Complex(double real, double imaginary);
-        Complex(short form, double argument, double module);
+        static Complex fromExp(double argument, double module){
+            return Complex(module*cos(argument), module*sin(argument));
+        }
 		double real();
 		double imaginary();
 		double module();

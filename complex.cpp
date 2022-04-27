@@ -20,10 +20,7 @@ Complex::Complex(double real, double imaginary){
 	x=real;
 	y=imaginary;
 }
-Complex::Complex(short form, double argument, double module){
-    x=module*cos(argument);
-    y=module*sin(argument);
-}
+
 double Complex::real(){
 	return x;
 }
@@ -75,7 +72,7 @@ std::string Complex::exponentialForm(){
 }
 
 Complex Complex::pow(int power){
-    return Complex(1,argument()*power,std::pow(module(),power));
+    return fromExp(argument()*power,std::pow(module(),power));
 }
 
 std::ostream& operator<<(std::ostream& os, const Complex& c){
@@ -107,12 +104,10 @@ Complex Complex::operator-(Complex b){
     return b;
 }
 Complex Complex::operator*(Complex b){
-    Complex out(1,b.argument()+argument(),b.module()*module());
-    return out;
+    return Complex::fromExp(b.argument()+argument(),b.module()*module());
 }
 Complex Complex::operator/(Complex b){
-    Complex out(1,argument()-b.argument(),module()/b.module());
-    return out;
+    return Complex::fromExp(argument()-b.argument(),module()/b.module());
 }
 
 Complex operator+(double real, const Complex& complex){
@@ -120,6 +115,6 @@ Complex operator+(double real, const Complex& complex){
 }
 Complex operator*(double real, Complex& complex){
     Complex r(real);
-    return Complex(1,r.argument()+complex.argument(),r.module()*complex.module());
+    return Complex::fromExp(r.argument()+complex.argument(),r.module()*complex.module());
 }
 
