@@ -14,3 +14,18 @@ To create new object of Complex type: <br/>
   </li>
   Complex number(RealPart, ImaginaryPart);
 </ul>
+# Documentation
+Constructor:
+  Complex(double real, double imaginary)
+  Complex(double real)
+Methods:
+<ul>
+  <li>static Complex fromExp(double argument, double module)</li>
+  This method returns new complex number from given argument and module.
+  <li>double real()</li>
+  Returns real part of complex number object.
+  <li>double imaginary()</li>
+  Returns imaginary part of complex number object.
+</ul>
+  
+  
