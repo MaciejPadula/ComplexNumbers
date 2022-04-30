@@ -1,6 +1,6 @@
 #include "complex.h"
-#include "fraction.h"
 #include <cmath>
+#include <sstream>
 
 namespace patch
 {
@@ -40,34 +40,32 @@ double Complex::argument(){
     return 0;
 }
 std::string Complex::trigonometricForm(){
-	Fraction arg(argument()/3.14);
 	std::string out="";
 	if(module()!=1){
-		out+=patch::to_string(Fraction(module()).getString())+"(";
+		out+=patch::to_string(module())+"(";
 	}
 	if(cos(argument())<0){
 		out+="-";
 	}
-	out+="cos(pi*"+arg.getString()+")";
+	out+="cos(pi*"+patch::to_string(argument()/3.14)+")";
 	if(sin(argument())<0){
 		out+="-";
 	}
 	else{
 		out+="+";
 	}
-	out+="i*sin(pi*"+arg.getString()+")";
+	out+="i*sin(pi*"+patch::to_string(argument()/3.14)+")";
 	if(module()!=1){
 		out+=")";
 	}
 	return out;
 }
 std::string Complex::exponentialForm(){
-	Fraction arg(argument()/3.14);
 	std::string out="";
 	if(module()!=1){
-		out+=patch::to_string(Fraction(module()).getString())+"*";
+		out+=patch::to_string(module())+"*";
 	}
-	out+="exp(i*pi*"+patch::to_string(arg)+")";
+	out+="exp(i*pi*"+patch::to_string(argument()/3.14)+")";
 	return out;
 }
 
@@ -76,17 +74,17 @@ Complex Complex::pow(int power){
 }
 
 std::ostream& operator<<(std::ostream& os, const Complex& c){
-	os<<Fraction::roundoff(c.x,2);
+	os<<c.x;
 	if(c.y>=0){
 		os<<"+";
 		if(c.y!=1){
-			os<<Fraction::roundoff(c.y,2);
+			os<<c.y;
 		}
 	}
 	else{
 		os<<"-";
 		if(c.y!=-1){
-			os<<Fraction::roundoff(-1*c.y,2);
+			os<<-1*c.y;
 		}
 	}
 	os<<"i";

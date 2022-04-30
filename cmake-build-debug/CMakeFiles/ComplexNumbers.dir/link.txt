@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\ComplexNumbers.dir/objects.a
+C:\PROGRA~2\Falcon\MinGW\bin\ar.exe cr CMakeFiles\ComplexNumbers.dir/objects.a @CMakeFiles\ComplexNumbers.dir\objects1.rsp
+C:\PROGRA~2\Falcon\MinGW\bin\G__~1.EXE -g -Wl,--whole-archive CMakeFiles\ComplexNumbers.dir/objects.a -Wl,--no-whole-archive -o ComplexNumbers.exe -Wl,--out-implib,libComplexNumbers.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\ComplexNumbers.dir\linklibs.rsp

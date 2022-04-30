@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/Users/Dulik/Documents/GitHub/ComplexNumbers/complex.h
+iostream
+-
+math.h
+-
+string
+-
+
+D:/Users/Dulik/Documents/GitHub/ComplexNumbers/main.cpp
+iostream
+-
+complex.h
+D:/Users/Dulik/Documents/GitHub/ComplexNumbers/complex.h
+

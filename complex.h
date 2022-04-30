@@ -1,7 +1,7 @@
 #include <iostream>
 #include <math.h>
 #include <string>
-#include "fraction.h"
+
 
 #ifndef COMPLEX_H
 #define COMPLEX_H
